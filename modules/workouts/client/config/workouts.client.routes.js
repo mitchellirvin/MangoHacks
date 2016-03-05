@@ -60,6 +60,18 @@
         data:{
           pageTitle: 'Workout {{ articleResolve.name }}'
         }
+      })
+      .state('workouts.setup', {
+        url: '/setup',
+        templateUrl: 'modules/core/client/views/workoutsetup.client.view.html',
+        controller: 'WorkoutsController',
+        controllerAs: 'vm',
+        resolve: {
+          workoutResolve: getWorkout
+        },
+        data:{
+          pageTitle: 'Workout {{ articleResolve.name }}'
+        }
       });
   }
 

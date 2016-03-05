@@ -17,6 +17,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
+      .state('setup', {
+        url: '/setup',
+        templateUrl: 'modules/core/client/views/workoutsetup.client.view.html'
+      })
+      .state('program', {
+        url: '/program',
+        templateUrl: 'modules/core/client/views/workoutprogram.client.view.html'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',
