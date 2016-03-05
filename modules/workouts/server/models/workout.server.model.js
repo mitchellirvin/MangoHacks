@@ -10,20 +10,24 @@ var mongoose = require('mongoose'),
  * Workout Schema
  */
 var WorkoutSchema = new Schema({
-  workoutProgram: [{
-    weeks: [{
-      days: [{
-        isCompleted: Boolean,
-        ExerciseID: Number,
-        reps: Number,
-        sets: Number
-      }]
-    }],
-    ExperienceLevel: String,
+  program: {
+    weeks: [
+        [
+          [
+            { 
+              isCompleted: Boolean, 
+              exerciseId: Number,
+              reps: Number,
+              sets: Number
+            }
+          ]
+        ]
+      ]
+    experienceLevel: String,
     type: String,
     numDays: Number,
-    workoutID: Number
-  }]
+    _id: Number
+  }
 });
 
 mongoose.model('Workout', WorkoutSchema);
