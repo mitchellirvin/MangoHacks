@@ -25,6 +25,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/program',
         templateUrl: 'modules/core/client/views/workoutprogram.client.view.html'
       })
+      .state('workout', {
+        url: '/program/workout',
+        templateUrl: 'modules/core/client/views/workout.client.view.html'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',
