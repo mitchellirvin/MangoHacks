@@ -12,10 +12,13 @@
 
     // Workout setup controller logic
     // ...
+    $(function() {
+      $('select').material_select();
+    });
 
-    init();
-
-    function init() {
+    $scope.generateWorkout = function() {
+//      console.log(noDays);
+      console.log($scope.noDays);
     }
   }
 })();
