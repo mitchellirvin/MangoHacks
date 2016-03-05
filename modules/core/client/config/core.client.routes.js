@@ -18,7 +18,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
       .state('setup', {
-        url: '/setup',
+        url: '/setup/:type',
         templateUrl: 'modules/core/client/views/workoutsetup.client.view.html'
       })
       .state('program', {
