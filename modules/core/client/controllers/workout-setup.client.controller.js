@@ -9,7 +9,6 @@
 
   function WorkoutSetupController($scope) {
     var vm = this;
-    var numDays = 0;
 
     // Workout setup controller logic
     // ...
@@ -19,13 +18,14 @@
     });
 
     $('#workout-setup-form select[name=days]').on('change',function(){
-      console.log('select has changed to:',$(this).val());
       vm.numDays = $(this).val();
     });
 
     $scope.generateWorkout = function() {
 //      console.log(noDays);
-      console.log(vm.noDays);
+      console.log(vm.numDays);
+      console.log($('#workout-setup-form select[name=days]').val(););
+      
     };
   }
 })();
