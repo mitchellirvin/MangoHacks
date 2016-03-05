@@ -1,20 +1,76 @@
-<!DOCTYPE html>
-<html>
-<body>
+'use strict';
 
-<script>
+var reps,
+	sets;
 
+var inputDay = 2;
+var inputExperience = "beginner";
 
+switch(inputDay) {
+	case 1:
+		if(inputExperience == "beginner"){
 
+		} else if(inputExperience == "intermediate") {
 
-var ex1 = "squat",
-	ex2 = "bench",
-	ex3 = "deadlift";
-var exercises = [ex1,ex2,ex3];
+		} else {
 
+		}
+		break;
+	case 2:
+		if(inputExperience == "beginner"){
+			
+		} else if(inputExperience == "intermediate") {
 
+		} else {
 
-</script>
+		}
+		break;
+	case 3:
+		if(inputExperience == "beginner"){
+			
+		} else if(inputExperience == "intermediate") {
 
-</body>
-</html>
+		} else {
+
+		}
+		break;
+	case 4:
+		if(inputExperience == "beginner"){
+			
+		} else if(inputExperience == "intermediate") {
+
+		} else {
+
+		}
+		break;
+	case 5:
+		if(inputExperience == "beginner"){
+			
+		} else if(inputExperience == "intermediate") {
+
+		} else {
+
+		}
+		break;
+	default:
+}
+
+//based off of...
+/*
+var WorkoutSchema = new Schema({
+  workoutProgram: [{
+    weeks: [{
+      days: [{
+        isCompleted: Boolean,
+        ExerciseID: Number,
+        reps: Number,
+        sets: Number
+      }]
+    }],
+    ExperienceLevel: String,
+    type: String,
+    numDays: Number,
+    workoutID: Number
+  }]
+});
+*/

@@ -5,6 +5,8 @@
  */
 var app = require('./config/lib/app');
 var server = app.start();
+
+/*
 var express = require('express');
 var	app = express();
 var bodyParser = require('body-parser');
@@ -31,7 +33,7 @@ var router = express.Router();
 
 // test route, localhost:8080/api
 router.get('/', function(req, res) {
-	res.json({ message: 'hooray! welcome to our api!'});
+  res.json({ message: 'hooray! welcome to our api!' });
 });
 
 // more routes to come
@@ -42,4 +44,4 @@ app.use('/api', router);
 // Start server
 // --------------------------------------
 app.listen(port);
-console.log('Magic is happening on port: ' + port);
+console.log('Magic is happening on port: ' + port);*/
