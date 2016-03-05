@@ -23,9 +23,9 @@
     });
 
     $scope.generateWorkout = function() {
-      console.log("Num Days: " + vm.numDays);
-      console.log("Skill Level: " + $('input[name="group1"]:checked').val());
-      console.log("Workout Type: " + $stateParams.type);
+      console.log('Num Days: ' + vm.numDays);
+      console.log('Skill Level: ' + $('input[name="group1"]:checked').val());
+      console.log('Workout Type: ' + $stateParams.type);
     };
   }
 })();
