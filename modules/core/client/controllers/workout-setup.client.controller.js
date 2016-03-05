@@ -24,8 +24,8 @@
     $scope.generateWorkout = function() {
 //      console.log(noDays);
       console.log(vm.numDays);
-      console.log($('#workout-setup-form select[name=days]').val(););
-      
+      console.log($('#workout-setup-form select[name=days]').val());
+
     };
   }
 })();
