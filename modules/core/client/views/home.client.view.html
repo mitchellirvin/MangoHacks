@@ -1,84 +1,128 @@
 <section ng-controller="HomeController">
-  <div class="jumbotron text-center">
+  
+
+  <div class="container">
+    <h3 class="center-align header teal-text text-lighten-2">Choose Your Workout Program</h3>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
+      <div class="col s12 m8 l4 offset-m2">
+        <div class="card hoverable small">
+          <div class="card-image">
+            <img href="" src="http://pictogram-free.com/material/164.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Strength Building<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Strength Building<i class="material-icons right">close</i></span>
+            <p>Select strength building to get a workout plan that focuses on building muscle. This type of workout will have less cardio, and more strengthening exercises.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m8 l4 offset-m2">
+        <div class="card hoverable small">
+          <div class="card-image">
+            <img href="" src="https://image.freepik.com/free-icon/man-running-on-treadmill-machine_318-62358.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Weight Loss<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Weight Loss<i class="material-icons right">close</i></span>
+            <p>Select weight loss to get a workout plan that involves more cardio, to maximize calories burned!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m8 l4 offset-m2">
+        <div class="card hoverable small">
+          <div class="card-image">
+            <img href="" src="http://www.adaicon.com/sites/default/files/articles/201601/14374-fit-4-life-bfr-membership-available-month.png">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator teal-text text-lighten-2">Balanced<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Balanced<i class="material-icons right">close</i></span>
+            <p>Choose balanced in order to have a workout plan that combines both cardio and weight lifting.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Open-Source Full-Stack Solution For MEAN Applications
-      </p>
-    </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-      </p>
-    </div>
   </div>
-  <div>
-    <h2>Congrats! You've configured and run the sample application.</h2>
-    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-    <p>This sample application tracks users and articles.</p>
-    <ul>
-      <li>
-        Click
-        <em>Sign Up</em> to get started.
-      </li>
-      <li>
-        Configure your app to work with your social accounts, by editing the
-        <em>/config/env/*.js</em> files.
-      </li>
-      <li>
-        Edit your users module.
-      </li>
-      <li>
-        Add new CRUD modules.
-      </li>
-      <li>
-        Have fun...
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <h2><strong>M</strong>ongoDB</h2>
-      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>E</strong>xpress</h2>
-      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>ngularJS</h2>
-      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>N</strong>ode.js</h2>
-      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
-    </div>
-  </div>
-  <div class="well">
-    <h2>MEAN.JS Documentation</h2>
+
+  
+
+  <!-- workoutsetup -->
+  
+  <div class="container">
+    <h3 class="center-align header teal-text text-lighten-2">Workout Setup</h3>
+
+    <h4 class="header teal-text text-lighten-2">Experience Level</h4>
+    <form action="#">
     <p>
-      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
-      <ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-				</li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
+      <input name="group1" type="radio" id="beginner" />
+      <label for="beginner">Beginner</label>
+      <input name="group1" type="radio" id="intermediate" />
+      <label for="intermediate">Intermediate</label>
+      <input name="group1" type="radio" id="exper"  />
+      <label for="exper">Expert</label>
     </p>
+
+    <br>
+
+    <h4 class="header teal-text text-lighten-2">Number of Days Per Week</h4>
+    <div class="row">
+    <div class="input-field col s12 m6">
+      <select>
+        <option value="1">1 Day</option>
+        <option value="2">2 Days</option>
+        <option value="3">3 Days</option>
+        <option value="4">4 Days</option>
+        <option value="5">5 Days</option>
+      </select>
+    </div>
+        </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Continue</button>
+
+    </form>
   </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>The MEAN.JS Team.
+
+ 
+
+  <!-- workoutprogram -->
+
+  
+
+  <div class="container">
+    <div class="row">
+      <h3 class="center-align header teal-text text-lighten-2">Workout Program Name</h3>
+      <div class="col s12 m6 card-panel hoverable">
+        <p>
+          Day <span>1</span>
+          <h5 class="header teal-text text-lighten-2">Upper Body</h5>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- workout -->
+  <div class="container">
+    <div class="row">
+      <h3 class="header center-align teal-text text-lighten-2">
+        Day <span>1</span>
+        <br>
+        Upper Body
+      </h3>
+
+      <div class="col s12 m6 card-panel hoverable">
+        <h5 class="header">Exercise <span>1</span></h5>
+        <h5 class="header">Sets: <span>3</span></h5>
+        <h5 class="header">Reps: <span>10</span></h5>
+      </div>
+  </div>
+
+  <!-- exercise -->
+
 </section>
