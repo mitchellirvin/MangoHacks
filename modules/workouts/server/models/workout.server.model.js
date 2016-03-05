@@ -11,14 +11,18 @@ var mongoose = require('mongoose'),
  */
 var WorkoutSchema = new Schema({
   program: {
-    weeks: [{
-      days: [{
-        isCompleted: Boolean, 
-        exerciseId: Number,
-        reps: Number,
-        sets: Number
-      }]
-    }],
+    weeks: [
+      [
+        [
+          { 
+            isCompleted: Boolean, 
+            exerciseId: Number,
+            reps: Number,
+            sets: Number
+          }
+        ]
+      ]
+    ],
     experienceLevel: String,
     type: String,
     numDays: Number,
