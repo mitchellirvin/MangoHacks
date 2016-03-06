@@ -14,7 +14,10 @@
         console.log(data.data);
         $scope.workoutProgram = data.data;
         // TODO: Databind the data.data 
-
+        $scope.weeks = data.data.weeks;
+        $scope.numDays = data.data.numDays;
+        $scope.experienceLevel = data.data.experienceLevel;
+        $scope.repeats = new Array($scope.numDays);
       }, function (error) {
           console.log(error);
       });

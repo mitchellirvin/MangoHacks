@@ -11,5 +11,6 @@
     var vm = this;
 
     var workoutsForTheDay = $stateParams.workoutData;
+    console.log($stateParams.workoutData)
   }
 })();
