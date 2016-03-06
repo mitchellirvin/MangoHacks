@@ -22,7 +22,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/workoutsetup.client.view.html'
       })
       .state('program', {
-        url: '/programs',
+        url: '/programs/:programId',
         templateUrl: 'modules/core/client/views/workoutprogram.client.view.html'
       })
       .state('workout', {
