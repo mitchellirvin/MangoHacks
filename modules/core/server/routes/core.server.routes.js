@@ -41,7 +41,7 @@ module.exports = function (app) {
 	  force: String,
 	  level: String,
 	  primaryMuscleGroup: String,
-	  mechanicstType: String,
+	  mechanicsType: String,
 	  sport: Boolean,
 	  type: String,
 	  guide: Array,
