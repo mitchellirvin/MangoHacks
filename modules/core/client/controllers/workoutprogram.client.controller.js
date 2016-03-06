@@ -25,7 +25,7 @@
     console.log($stateParams.programId);
 
     $scope.goToWorkoutDay = function(day) {
-      	$state.go('workout', {"workoutData": $scope.workoutProgram.weeks[day]});
+      	$state.go('workout', {"workoutData": {"workouts": $scope.workoutProgram.weeks[day], "dayNum":day+1}});
     };
 
   }

@@ -10,8 +10,10 @@
   function WorkoutController($scope, $stateParams, $http) {
     var vm = this;
 
-    $scope.workoutsForTheDay = $stateParams.workoutData;
+    $scope.workoutsForTheDay = $stateParams.workoutData.workouts;
+    $scope.dayNum = $stateParams.workoutData.dayNum;
 
-    console.log($stateParams.workoutData)
+    console.log($stateParams.workoutData);
+    console.log($stateParams.workoutData.dayNum);
   }
 })();
