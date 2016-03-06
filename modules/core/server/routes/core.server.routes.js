@@ -114,6 +114,8 @@ module.exports = function (app) {
 		var numberOfDays = req.body.numberOfDays;
 		var week = [];
 
+		console.log("Experience: " + ExperienceLevel + " goal: " + goal + " num days: " + numberOfDays);
+
 		makeWorkout(numberOfDays, week, ExperienceLevel, goal);
 
 		var programObj = {"weeks": week, "experienceLevel": ExperienceLevel, "type": goal, "numDays": numberOfDays};
@@ -148,15 +150,16 @@ module.exports = function (app) {
 	// Dat Algorithm Though
 
 	function makeWorkout(numberOfDays, week, ExperienceLevel, goal){		//passed in number of days per week and the week array (holds each day)
+		console.log("Experience: " + ExperienceLevel + " goal: " + goal + " num days: " + numberOfDays);
 		if(numberOfDays === 1) {
 			switch(goal) {
-				case "strength": 
+				case 0: 
 					week.push([new Exercise("Squats",4,8),new Exercise("Bench Press",4,8),new Exercise("Deadlift",3,6),new Exercise("Rows",4,12)]);
 					break;
-				case "weight loss":
+				case 1:
 					week.push([new Exercise("Squats",4,8),new Exercise("Walking Lunges",4,8),new Exercise("Running",30,0)]);
 					break;
-				case "balanced":
+				case 2:
 					week.push([new Exercise("Squats",4,8),new Exercise("Bench Press",4,8),new Exercise("Deadlift",3,6),new Exercise("Running",15,0)]);
 					break;
 				default:
@@ -177,39 +180,45 @@ module.exports = function (app) {
 	}
 
 	function makeLowerDay(week, ExperienceLevel, goal){
-		if(goal === "strength"){
-			if(ExperienceLevel === "Beginner"){
+		console.log("Lower Day, Experience: " + ExperienceLevel + " goal: " + goal);
+		if(goal == 0){
+			console.log("goal 0");
+			if(ExperienceLevel == 0){
 				week.push([new Exercise("Walking Lunges",3,10),new Exercise("Leg Extensions",3,10),new Exercise("Hamstring Curls",3,10)]);
-			} else if(ExperienceLevel === "Intermediate"){
+			} else if(ExperienceLevel == 1){
 				week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,6),new Exercise("Hamstring Curls",3,10),new Exercise("Calf Extensions",4,12)]);
 			} else {
+				console.log("goal = 0, experience not 0 or 1");
 				week.push([new Exercise("Squats",3,5),new Exercise("Deadlifts",3,5),new Exercise("Hamstring Curls",4,10),new Exercise("Calf Extensions",4,12)]);
 			}
-		} else if(goal === "balanced") {
-			if(ExperienceLevel === "Beginner"){
+		} else if(goal == 2) {
+			if(ExperienceLevel == 0){
 				week.push([new Exercise("Walking Lunges",3,10),new Exercise("Leg Extensions",3,10),new Exercise("Elliptical",15,0)]);
-			} else if(ExperienceLevel === "Intermediate"){
+			} else if(ExperienceLevel == 1){
 				week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,6),new Exercise("Calf Extensions",4,12),new Exercise("Running",15,0)]);
 			} else {
+				console.log("goal = 2, experience not 0 or 1");
 				week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,4),new Exercise("Calf Extensions",4,12),new Exercise("Running",15,0)]);
 			}
 		} else {
+			console.log("goal not 0 or 2, experience not 0 or 1");
 			week.push([new Exercise("Squats",4,12),new Exercise("Walking Lunges",4,12),new Exercise("Running",30,0)]);
 		}
 	}
 	function makeUpperDay(week, ExperienceLevel, goal){
-		if(goal === "strength"){
-			if(ExperienceLevel === "Beginner"){
+		console.log("Upper Day, Experience: " + ExperienceLevel + " goal: " + goal);
+		if(goal == 0){
+			if(ExperienceLevel == 0){
 				week.push([new Exercise("Bench Press",3,10),new Exercise("Lat Pulldowns",3,10),new Exercise("Curls",3,10)]);
-			} else if(ExperienceLevel === "Intermediate"){
+			} else if(ExperienceLevel == 1){
 				week.push([new Exercise("Bench Press",5,5),new Exercise("Overhead Press",4,8),new Exercise("Pullups",4,6),new Exercise("Curls",3,10)]);
 			} else {
 				week.push([new Exercise("Bench Press",3,5),new Exercise("Overhead Press",4,6),new Exercise("Pullups",4,10),new Exercise("Curls",3,10)]);
 			}
-		} else if(goal === "balanced"){
-			if(ExperienceLevel === "Beginner"){
+		} else if(goal == 2){
+			if(ExperienceLevel == 0){
 				week.push([new Exercise("Bench Press",3,10),new Exercise("Lat Pulldowns",3,10),new Exercise("Elliptical",10,0)]);
-			} else if(ExperienceLevel === "Intermediate"){
+			} else if(ExperienceLevel == 1){
 				week.push([new Exercise("Bench Press",5,5),new Exercise("Overhead Press",4,8),new Exercise("Pullups",4,6),new Exercise("Running",15,0)]);
 			} else {
 				week.push([new Exercise("Bench Press",3,5),new Exercise("Overhead Press",4,6),new Exercise("Pullups",4,10),new Exercise("Running",15,0)]);
