@@ -56,7 +56,7 @@ module.exports = function (app) {
 	// Root routing
 	var core = require('../controllers/core.server.controller');
 
-	var Exercise = mongoose.model('Exercise');
+	var ExerciseDB = mongoose.model('Exercise');
 	var Program = mongoose.model('Workout');
 
 	// Define error pages
@@ -67,7 +67,7 @@ module.exports = function (app) {
 
 	app.route('/exercises')
 	.get(function(req, res) {
-		Exercise.find(function(err, exercises) {
+		ExerciseDB.find(function(err, exercises) {
 			if (err) {
 				res.send(err);
 			}
@@ -76,7 +76,7 @@ module.exports = function (app) {
 		});
 	})
 	.post(function(req, res, next) {
-		var exercise = new Exercise(req.body);
+		var exercise = new ExerciseDB(req.body);
 		
 		exercise.save(function(err, exercise) {
 			if(err) {
@@ -89,7 +89,7 @@ module.exports = function (app) {
 
 	app.route('/exercises/:exercise_id')
 	.get(function(req, res) {
-		Exercise.findById(req.params.exercise_id, function(err, exercise) {
+		ExerciseDB.findById(req.params.exercise_id, function(err, exercise) {
 			if (err) {
 				res.send(err);
 			}
@@ -150,27 +150,27 @@ module.exports = function (app) {
 
 
 	function makeWorkout(numberOfDays, week, ExperienceLevel, goal){		//passed in number of days per week and the week array (holds each day)
-			if(numberOfDays == 1) {
+			if(numberOfDays === 1) {
 				switch(goal) {
 					case "strength": 
-						week.push([{"Squats",4,8},{"Bench Press",4,8},{"Deadlift",3,6},{"Rows",4,12}]);
+						week.push([new Exercise("Squats",4,8),new Exercise("Bench Press",4,8),new Exercise("Deadlift",3,6),new Exercise("Rows",4,12)]);
 						break;
 					case "weight loss":
-						week.push([{"Squats",4,8},{"Walking Lunges",4,8},{"Running",30,0}]);
+						week.push([new Exercise("Squats",4,8),new Exercise("Walking Lunges",4,8),new Exercise("Running",30,0)]);
 						break;
 					case "balanced":
-						week.push([{"Squats",4,8},{"Bench Press",4,8},{"Deadlift",3,6},{"Running",15,0}]);
+						week.push([new Exercise("Squats",4,8),new Exercise("Bench Press",4,8),new Exercise("Deadlift",3,6),new Exercise("Running",15,0)]);
 						break;
 					default:
 						break; 
 				}
 			}
 			else {
-				for(int i=0; i < numberOfDays; i++){
-					if(i%2 == 0){
+				for(var i=0; i < numberOfDays; i++){
+					if(i%2 === 0){
 						makeUpperDay(week, ExperienceLevel, goal);
 					}
-					else if(i%2 == 1) {
+					else if(i%2 === 1) {
 						makeLowerDay(week, ExperienceLevel, goal); 
 					}		
 				}
@@ -179,45 +179,52 @@ module.exports = function (app) {
 		}
 
 		function makeLowerDay(week, ExperienceLevel, goal){
-			if(goal == "strength"){
-				if(ExperienceLevel == "Beginner"){
-					week.push([{"Walking Lunges",3,10},{"Leg Extensions",3,10},{"Hamstring Curls",3,10}]);
-				} else if(ExperienceLevel == "Intermediate"){
-					week.push([{"Squats",4,8},{"Deadlifts",4,6},{"Hamstring Curls",3,10},{"Calf Extensions",4,12}]);
+			if(goal === "strength"){
+				if(ExperienceLevel === "Beginner"){
+					week.push([new Exercise("Walking Lunges",3,10),new Exercise("Leg Extensions",3,10),new Exercise("Hamstring Curls",3,10)]);
+				} else if(ExperienceLevel === "Intermediate"){
+					week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,6),new Exercise("Hamstring Curls",3,10),new Exercise("Calf Extensions",4,12)]);
 				} else {
-					week.push([{"Squats",3,5},{"Deadlifts",3,5},{"Hamstring Curls",4,10},{"Calf Extensions",4,12}]);
+					week.push([new Exercise("Squats",3,5),new Exercise("Deadlifts",3,5),new Exercise("Hamstring Curls",4,10),new Exercise("Calf Extensions",4,12)]);
 				}
-			} else if(goal == "balanced") {
-				if(ExperienceLevel == "Beginner"){
-					week.push([{"Walking Lunges",3,10},{"Leg Extensions",3,10},{"Elliptical",15,0}]);
-				} else if(ExperienceLevel == "Intermediate"){
-					week.push([{"Squats",4,8},{"Deadlifts",4,6},{"Calf Extensions",4,12},{"Running",15,0}]);
+			} else if(goal === "balanced") {
+				if(ExperienceLevel === "Beginner"){
+					week.push([new Exercise("Walking Lunges",3,10),new Exercise("Leg Extensions",3,10),new Exercise("Elliptical",15,0)]);
+				} else if(ExperienceLevel === "Intermediate"){
+					week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,6),new Exercise("Calf Extensions",4,12),new Exercise("Running",15,0)]);
 				} else {
-					week.push([{"Squats",4,8},{"Deadlifts",4,4},{"Calf Extensions",4,12},{"Running",15,0}]);
+					week.push([new Exercise("Squats",4,8),new Exercise("Deadlifts",4,4),new Exercise("Calf Extensions",4,12),new Exercise("Running",15,0)]);
 				}
 			} else {
-				week.push([{"Squats",4,12},{"Walking Lunges",4,12},{"Running",30,0}]);
+				week.push([new Exercise("Squats",4,12),new Exercise("Walking Lunges",4,12),new Exercise("Running",30,0)]);
 			}
 		}
 		function makeUpperDay(week, ExperienceLevel, goal){
-			if(goal == "strength"){
-				if(ExperienceLevel == "Beginner"){
-					week.push([{"Bench Press",3,10},{"Lat Pulldowns",3,10},{"Curls",3,10}]);
-				} else if(ExperienceLevel == "Intermediate"){
-					week.push([{"Bench Press",5,5},{"Overhead Press",4,8},{"Pullups",4,6},{"Curls",3,10}]);
+			if(goal === "strength"){
+				if(ExperienceLevel === "Beginner"){
+					week.push([new Exercise("Bench Press",3,10),new Exercise("Lat Pulldowns",3,10),new Exercise("Curls",3,10)]);
+				} else if(ExperienceLevel === "Intermediate"){
+					week.push([new Exercise("Bench Press",5,5),new Exercise("Overhead Press",4,8),new Exercise("Pullups",4,6),new Exercise("Curls",3,10)]);
 				} else {
-					week.push([{"Bench Press",3,5},{"Overhead Press",4,6},{"Pullups",4,10},{"Curls",3,10}]);
+					week.push([new Exercise("Bench Press",3,5),new Exercise("Overhead Press",4,6),new Exercise("Pullups",4,10),new Exercise("Curls",3,10)]);
 				}
-			} else if(goal == "balanced"){
-				if(ExperienceLevel == "Beginner"){
-					week.push([{"Bench Press",3,10},{"Lat Pulldowns",3,10},{"Elliptical",10,0}]);
-				} else if(ExperienceLevel == "Intermediate"){
-					week.push([{"Bench Press",5,5},{"Overhead Press",4,8},{"Pullups",4,6},{"Running",15,0}]);
+			} else if(goal === "balanced"){
+				if(ExperienceLevel === "Beginner"){
+					week.push([new Exercise("Bench Press",3,10),new Exercise("Lat Pulldowns",3,10),new Exercise("Elliptical",10,0)]);
+				} else if(ExperienceLevel === "Intermediate"){
+					week.push([new Exercise("Bench Press",5,5),new Exercise("Overhead Press",4,8),new Exercise("Pullups",4,6),new Exercise("Running",15,0)]);
 				} else {
-					week.push([{"Bench Press",3,5},{"Overhead Press",4,6},{"Pullups",4,10},{"Running",15,0}]);
+					week.push([new Exercise("Bench Press",3,5),new Exercise("Overhead Press",4,6),new Exercise("Pullups",4,10),new Exercise("Running",15,0)]);
 				}
 			} else {
-				week.push([{"Bench Press",4,12},{"Lat Pulldowns",4,12},{"Running",30,0}]);
+				week.push([new Exercise("Bench Press",4,12),new Exercise("Lat Pulldowns",4,12),new Exercise("Running",30,0)]);
 			}
+		}
+
+		function Exercise(id, reps, sets) {
+			this.exerciseId = id;
+			this.reps = reps;
+			this.sets = sets;
+			this.isCompleted = false;
 		}
 };
