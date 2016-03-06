@@ -5,17 +5,11 @@
     .module('core')
     .controller('WorkoutController', WorkoutController);
 
-  WorkoutController.$inject = ['$scope'];
+  WorkoutController.$inject = ['$scope', '$stateParams', '$http'];
 
-  function WorkoutController($scope) {
+  function WorkoutController($scope, $stateParams, $http) {
     var vm = this;
 
-    // Workout controller logic
-    // ...
-
-    init();
-
-    function init() {
-    }
+    var workoutsForTheDay = $stateParams.workoutData;
   }
 })();

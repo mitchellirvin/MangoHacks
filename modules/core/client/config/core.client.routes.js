@@ -26,11 +26,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/workoutprogram.client.view.html'
       })
       .state('workout', {
-        url: '/program/workout',
+        url: '/program/workout/{workoutData:json}',
         templateUrl: 'modules/core/client/views/workout.client.view.html'
       })
       .state('exercise', {
-        url: '/exercise',
+        url: '/exercise/{exerciseData:json}',
         templateUrl: 'modules/core/client/views/exercise.client.view.html'
       })
       .state('not-found', {
