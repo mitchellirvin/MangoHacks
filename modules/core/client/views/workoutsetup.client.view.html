@@ -1,8 +1,8 @@
 <section ng-controller="WorkoutSetupController">
   <div class="container">
-    <h3 class="center-align header teal-text text-lighten-2">Workout Setup</h3>
+    <h3 class="center-align header text-lighten-2">Workout Setup</h3>
 
-    <h4 class="header teal-text text-lighten-2">Experience Level</h4>
+    <h4 class="header text-lighten-2">Experience Level</h4>
     <form id="workout-setup-form">
 	    <p>
 	      <input name="group1" type="radio" id="beginner" value="0"/>
@@ -15,7 +15,7 @@
 
 	    <br>
 
-	    <h4 class="header teal-text text-lighten-2">Number of Days Per Week</h4>
+	    <h4 class="header text-lighten-2">Number of Days Per Week</h4>
 	    <div class="row">
 	    <div class="input-field col s12 m6">
 	      <select name="days">
@@ -27,7 +27,6 @@
 	      </select>
 	    </div>
 	    </div>
-
 	    <div class="btn waves-effect waves-light" ui-sref="program" name="action" ng-click="generateWorkout()">Continue</div>
     </form>
   </div>

@@ -22,11 +22,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/workoutsetup.client.view.html'
       })
       .state('program', {
-        url: '/program',
+        url: '/programs',
         templateUrl: 'modules/core/client/views/workoutprogram.client.view.html'
       })
       .state('workout', {
-        url: '/program/workout',
+        url: '/programs/workout',
         templateUrl: 'modules/core/client/views/workout.client.view.html'
       })
       .state('exercise', {

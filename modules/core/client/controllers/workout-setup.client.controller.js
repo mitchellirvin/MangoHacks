@@ -9,7 +9,6 @@
 
   function WorkoutSetupController($scope, $stateParams, $http) {
     var vm = this;
-
     // Workout setup controller logic
     // ...
     $(function() {
@@ -26,7 +25,6 @@
       console.log('Num Days: ' + vm.numDays);
       console.log('Skill Level: ' + $('input[name="group1"]:checked').val());
       console.log('Workout Type: ' + $stateParams.type);
-
       var data = { "experienceLevel": $('input[name="group1"]:checked').val(), "goal": $stateParams.type, "numberOfDays": vm.numDays };
 
       $http.post('/programs', data).then(function (data, status) {
@@ -35,6 +33,9 @@
       }, function (error) {
           console.log(error);
       });
+ /*     workouts.numDays = data.data.numDays;
+      workouts.type = data.data.type;
+      workouts.skill = data.data.skill;*/
     };
   }
 })();
