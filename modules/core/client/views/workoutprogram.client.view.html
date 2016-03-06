@@ -2,11 +2,15 @@
   <div class="container">
     <div class="row">
       <h3 class="center-align header text-lighten-2">Workout Program Name</h3>
-      <div ui-sref="workout" class="col s12 m6 card-panel hoverable">
-        <p> Day <span>1</span>
-          <ul> 
-            <li> <h5 class="header text-lighten-2"></h5></li>
-          </ul>
+      <ul> 
+        <li ng-repeat="i in repeats.slice(0,repeatCount) track by $index">      
+          <div ng-init="days" ui-sref="workout" class="col s12 m6 card-panel hoverable">
+        <p> Day <span>{{$index}}</span> 
+        </li>
+      </ul>
+
+          
+            
         </p>
       </div>
     </div>
