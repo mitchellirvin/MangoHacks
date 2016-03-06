@@ -5,9 +5,9 @@
     .module('core')
     .controller('WorkoutSetupController', WorkoutSetupController);
 
-  WorkoutSetupController.$inject = ['$scope', '$stateParams'];
+  WorkoutSetupController.$inject = ['$scope', '$stateParams', '$http'];
 
-  function WorkoutSetupController($scope, $stateParams) {
+  function WorkoutSetupController($scope, $stateParams, $http) {
     var vm = this;
 
     // Workout setup controller logic
@@ -26,6 +26,15 @@
       console.log('Num Days: ' + vm.numDays);
       console.log('Skill Level: ' + $('input[name="group1"]:checked').val());
       console.log('Workout Type: ' + $stateParams.type);
+
+      var data = { "experienceLevel": $('input[name="group1"]:checked').val(), "goal": $stateParams.type, "numberOfDays": vm.numDays };
+
+      $http.post('/programs', data).then(function (data, status) {
+        console.log(data.data);
+        // TODO: Go to next controller passing in data.data as state param
+      }, function (error) {
+          console.log(error);
+      });
     };
   }
 })();

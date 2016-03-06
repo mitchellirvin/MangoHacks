@@ -5,6 +5,7 @@ module.exports = {
     lib: {
       css: [
         'public/lib/Materialize/dist/css/materialize.min.css',
+        'https://fonts.googleapis.com/icon?family=Material+Icons',
       ],
       js: [
         'https://code.jquery.com/jquery-2.1.1.min.js',
