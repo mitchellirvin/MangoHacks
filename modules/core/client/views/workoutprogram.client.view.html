@@ -1,11 +1,11 @@
 <section ng-controller="WorkoutProgramController">
   <div class="container">
     <div class="row">
-      <h3 class="center-align header text-lighten-2">Workout Program Name</h3>
+      <h3 class="center-align header text-lighten-2"></h3>
       <ul> 
         <li ng-click="goToWorkoutDay($index)" ng-repeat="i in repeats.slice(0,repeatCount) track by $index">      
-          <div ng-init="days" ui-sref="workout" class="col s12 m6 card-panel hoverable">
-        <p> Day <span>{{$index}}</span> </p>
+          <div ui-sref="workout" class="col s12 m6 card-panel hoverable">
+        <p> Day <span>{{$index + 1}}</span> </p>
         </li>
       </ul>
       </div>

@@ -4,13 +4,16 @@
         <h3 class="header center-align text-lighten-2">
           Day <span>1</span>
           <br>
-          Upper Body
         </h3>
 
-        <div ui-sref="exercise" class="col s12 m6 card-panel hoverable">
-          <h5 class="header">Exercise <span>1</span></h5>
-          <h5 class="header">Sets: <span>3</span></h5>
-          <h5 class="header">Reps: <span>10</span></h5>
-        </div>
+        <ul>
+          <li ng-repeat="workout in workoutsForTheDay">
+            <div ui-sref="exercise" class="col s12 m6 card-panel hoverable">
+              <h5 class="header">{{workout.exerciseId}}</h5>
+              <h5 class="header">Sets: {{workout.sets}}</h5>
+              <h5 class="header">Reps: {{workout.reps}}</h5>
+            </div>
+          </li>
+      </ul>
     </div>
 </section>
