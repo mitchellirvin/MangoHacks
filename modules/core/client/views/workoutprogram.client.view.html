@@ -4,7 +4,7 @@
       <h3 class="center-align header text-lighten-2">Workout Program Name</h3>
       <ul> 
         <li ng-click="goToWorkoutDay($index)" ng-repeat="i in repeats.slice(0,repeatCount) track by $index">      
-          <div ng-init="days" ui-sref="workout" class="col s12 m6 card-panel hoverable">
+          <div ng-init="days" ui-sref="workout" class="col s10 offset-s1 m4 offset-m1 card-panel hoverable">
         <p> Day <span>{{$index}}</span> </p>
         </li>
       </ul>

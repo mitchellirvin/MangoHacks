@@ -219,7 +219,7 @@ module.exports = function (app) {
 		}
 	}
 
-	function Exercise(id, reps, sets) {
+	function Exercise(id, sets, reps) {
 		this.exerciseId = id;
 		this.reps = reps;
 		this.sets = sets;
