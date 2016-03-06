@@ -6,17 +6,17 @@
 var app = require('./config/lib/app');
 var server = app.start();
 
-/*
-var express = require('express');
-var	app = express();
-var bodyParser = require('body-parser');
+
+//var express = require('express');
+//var	app = express();
+//var bodyParser = require('body-parser');
 
 
 //connect to mongoDB
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o');
+//var mongoose = require('mongoose');
+//mongoose.connect('mongodb://mitch:password@ds023458.mlab.com:23458/logininfo');
 
-
+/*
 //configure app for bodyParser()
 //allows us to get data from a POST
 
